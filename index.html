@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkSort</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f4;
+            color: #333;
+        }
+        .header {
+            background: #ff7e5f;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: #ff7e5f;
+            padding: 10px 0;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+        .navbar a:hover {
+            background: #feb47b;
+            border-radius: 4px;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #ff7e5f;
+            font-weight: bold;
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #555;
+        }
+        .input-group input[type="text"],
+        .input-group input[type="email"],
+        .input-group input[type="password"],
+        .input-group input[type="date"],
+        .input-group input[type="time"],
+        .input-group textarea {
+            width: calc(100% - 20px);
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: box-shadow 0.3s ease;
+        }
+        .input-group input[type="text"]:focus,
+        .input-group input[type="email"]:focus,
+        .input-group input[type="password"]:focus,
+        .input-group input[type="date"]:focus,
+        .input-group input[type="time"]:focus,
+        .input-group textarea:focus {
+            box-shadow: 0 0 15px rgba(255, 112, 67, 0.8);
+        }
+        button[type="submit"] {
+            background: #ff7e5f;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background: #feb47b;
+            transform: scale(1.05);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background: #ff7e5f;
+            color: white;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .payment-option {
+            display: inline-block;
+            width: 18%;
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            transition: background 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+        .payment-option:hover {
+            background: #feb47b;
+            transform: scale(1.05);
+        }
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .step {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 280px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .step:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .step-icon {
+            font-size: 40px;
+            color: #ff7e5f;
+            margin-bottom: 10px;
+        }
+        .step-content h3 {
+            font-size: 20px;
+            color: #ff7e5f;
+            margin: 10px 0;
+        }
+        .step-content p {
+            color: #555;
+            font-size: 16px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"><h1>ParkSort</h1></div>
+    <div class="header"><h4>Parking made easy</h4></div>
+
+    <div class="navbar">
+        <a href="#about-us">About Us</a>
+        <a href="#sign-up">Sign Up</a>
+        <a href="#datetime">Pick Date & Time</a>
+        <a href="#location">Choose Location</a>
+        <a href="#payment">Payment Methods</a>
+        <a href="#how-to-use">How to Use</a>
+        <a href="#contact-us">Contact Us</a>
+    </div>
+
+    <div class="container" id="about-us">
+        <div class="section">
+            <h2>About Us</h2>
+            <p>Welcome to ParkSort, a pioneering platform designed to revolutionize the way you find and reserve parking spaces. Our mission is to save you valuable time and reduce the stress associated with parking by providing a seamless, efficient, and user-friendly solution. With features like real-time availability, voice assistance, loyalty programs, and 24x7 customer support, we aim to offer you the best parking experience possible.</p>
+        </div>
+    </div>
+
+    <div class="container" id="sign-up">
+        <div class="section">
+            <h2>Sign Up with Us!</h2>
+            <form action="http://localhost:5000/register" method="POST">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+            <div class="footer">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="datetime">
+        <div class="section">
+            <h2>Pick a Date and Time</h2>
+            <form action="http://localhost:5000/datetime" method="POST">
+                <div class="input-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="input-group">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <button type="submit">Confirm Date & Time</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container" id="location">
+        <div class="section">
+            <h2>Choose a Location</h2>
+            <form action="http://localhost:5000/location" method="POST">
+                <div class="input-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" required>
+                </div>
+                <button type="submit">Confirm Location</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container" id="payment">
+        <div class="section">
+            <h2>Select Payment Method</h2>
+            <div class="payment-option">
+                <i class="fas fa-mobile-alt"></i>
+                <p>UPI</p>
+            </div>
+            <div class="payment-option">
+                <i class="fas fa-wallet"></i>
+                <p>Paytm</p>
+            </div>
+            <div class="payment-option">
+                <i class="fas fa-phone"></i>
+                <p>PhonePe</p>
+            </div>
+            <div class="payment-option">
+                <i class="fas fa-university"></i>
+                <p>Net Banking</p>
+            </div>
+            <div class="payment-option">
+                <i class="fas fa-credit-card"></i>
+                <p>Card Payment</p>
+            </div>
+            <button type="submit">Proceed to Pay</button>
+        </div>
+    </div>
+
+    <div class="container" id="how-to-use">
+        <div class="section">
+            <h2>How to Use ParkSort</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>Sign Up or Login</h3>
+                        <p>Create an account or log in if you already have one.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>Pick Date & Time</h3>
+                        <p>Select the date and time you need the parking spot for.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>Choose Location</h3>
+                        <p>Enter your desired location to find available parking spots.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>Select Payment Method</h3>
+                        <p>Choose your preferred payment method and proceed to pay.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>Confirm Booking</h3>
+                        <p>Review your booking details and confirm the reservation.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>Park and Enjoy</h3>
+                        <p>Arrive at the designated spot and enjoy hassle-free parking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="contact-us">
+        <div class="section">
+            <h2>Contact Us</h2>
+            <form action="http://localhost:5000/contact" method="POST">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="contact_name" name="contact_name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="contact_email" name="contact_email" required>
+                </div>
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 ParkSort. All Rights Reserved.</p>
+        <p>Follow us on 
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a> 
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a> 
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </p>
+    </div>
+</body>
+</html>
